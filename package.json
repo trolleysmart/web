@@ -1,6 +1,12 @@
 {
   "name": "trolley-smart-web",
+  "description": "Trolley Smart Web",
   "version": "0.1.1",
+  "author": {
+    "name": "Micro Business Ltd",
+    "email": "micro.business.ltd@gmail.com",
+    "url": "http://www.micro-business.co.nz"
+  },
   "private": true,
   "dependencies": {
     "admin-on-rest": "^1.3.2",
@@ -15,5 +21,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "pre-commit": "lint:staged",
+  "repository": {
+    "url": "git@bitbucket.org:microbusiness/trolley-smart-web.git",
+    "type": "git"
   }
 }
