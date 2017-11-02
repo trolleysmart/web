@@ -3,7 +3,10 @@
 import { UserService } from 'micro-business-parse-server-common-web';
 import { AUTH_LOGIN, AUTH_LOGOUT, AUTH_CHECK, AUTH_ERROR } from 'admin-on-rest';
 
-export default (type, params) => {
+export default async (type, params) => {
+  console.log(type);
+  console.log(params);
+
   if (type === AUTH_LOGIN) {
     const { username, password } = params;
 
@@ -15,7 +18,9 @@ export default (type, params) => {
   }
 
   if (type === AUTH_CHECK) {
-    return UserService.getCurrentUserInfo();
+    const user = await UserService.getCurrentUserInfo();
+
+    return user ? Promise.resolve() : Promise.reject();
   }
 
   if (type === AUTH_ERROR) {
