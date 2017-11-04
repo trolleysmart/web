@@ -1,28 +1,29 @@
 // @flow
 
 import React, { Component } from 'react';
-import { Admin, Resource } from 'admin-on-rest';
-import authClient from './framework/auth';
+import { configParseServerSdk } from 'micro-business-parse-server-common-web';
+import { Provider } from 'react-redux';
+import Config from './framework/config';
+import configureStore from './framework/redux/Store';
 import './App.css';
 
-import { List, Datagrid, TextField } from 'admin-on-rest';
-
-export const PostList = props => (
-  <List {...props}>
-    <Datagrid>
-      <TextField source="id" />
-      <TextField source="title" />
-      <TextField source="body" />
-    </Datagrid>
-  </List>
-);
+const store = configureStore();
 
 class App extends Component {
+  constructor(props, context) {
+    super(props, context);
+
+    configParseServerSdk(Config.PARSE_SERVER_URL, Config.PARSE_SERVER_APPLICATION_ID, Config.PARSE_SERVER_JAVASCRIPT_KEY);
+
+    this.state = {
+      store,
+    };
+  }
+
   render = () => (
-    <Admin title="TrolleySmart" locale="en" authClient={authClient} restClient={null}>
-      <Resource name="posts" list={PostList} />
-      <Resource name="test" list={PostList} />
-    </Admin>
+    <Provider store={this.state.store}>
+      <h1>This is a test</h1>
+    </Provider>
   );
 }
 
