@@ -9,16 +9,20 @@
   },
   "private": true,
   "dependencies": {
+    "material-ui": "^1.0.0-beta.19",
+    "material-ui-icons": "^1.0.0-beta.17",
     "micro-business-common-react": "^1.0.0-alpha.2",
     "micro-business-parse-server-common-web": "^1.0.0-alpha.3",
     "parse": "^1.10.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-jss": "^7.2.0",
     "react-redux": "^5.0.6",
-    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "redux-saga": "^0.16.0",
-    "regenerator-runtime": "^0.11.0"
+    "regenerator-runtime": "^0.11.0",
+    "typeface-roboto": "0.0.43"
   },
   "devDependencies": {
     "autoprefixer": "7.1.6",
@@ -136,28 +140,56 @@
   "eslintConfig": {
     "extends": "react-app",
     "rules": {
-      "indent": [2, 2],
-      "linebreak-style": [0],
-      "import/no-unresolved": [2, {
-        "commonjs": true
-      }],
+      "indent": [
+        2,
+        2
+      ],
+      "linebreak-style": [
+        0
+      ],
+      "import/no-unresolved": [
+        2,
+        {
+          "commonjs": true
+        }
+      ],
       "import/named": 2,
       "import/default": 2,
       "import/namespace": 2,
       "import/export": 2,
       "react/prefer-stateless-function": 0,
-      "react/jsx-indent": [2, 2],
-      "react/jsx-indent-props": [2, 2],
-      "react/jsx-filename-extension": [1, {
-        "extensions": [".js", ".jsx"]
-      }],
+      "react/jsx-indent": [
+        2,
+        2
+      ],
+      "react/jsx-indent-props": [
+        2,
+        2
+      ],
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ],
       "react/no-unused-prop-types": 0,
-      "max-len": ["warn", 150],
+      "max-len": [
+        "warn",
+        150
+      ],
       "no-console": 0,
       "jsx-a11y/href-no-hash": "off",
-      "jsx-a11y/anchor-is-valid": ["warn", {
-        "aspects": ["invalidHref"]
-      }]
+      "jsx-a11y/anchor-is-valid": [
+        "warn",
+        {
+          "aspects": [
+            "invalidHref"
+          ]
+        }
+      ]
     }
   }
 }
