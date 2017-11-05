@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { configParseServerSdk } from 'micro-business-parse-server-common-web';
 import { Provider } from 'react-redux';
 import Config from './framework/config';
-import configureStore from './framework/redux/Store';
+import { configureStore } from './framework/redux';
 import './App.css';
 
 const store = configureStore();
