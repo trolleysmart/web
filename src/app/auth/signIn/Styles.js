@@ -1,9 +1,8 @@
 // @flow
 
 const styles = theme => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
+  root: {
+    flexGrow: 1,
   },
 });
 
