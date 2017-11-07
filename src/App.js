@@ -4,22 +4,13 @@ import React, { Component } from 'react';
 import { configParseServerSdk } from 'micro-business-parse-server-common-web';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Link, Route } from 'react-router-dom';
-import Button from 'material-ui/Button';
 import withRoot from './sharedComponents/withRoot';
 import Config from './framework/config';
 import { configureStore } from './framework/redux';
+import { SignInContainer } from './app/auth/signIn';
 import './App.css';
 
 const store = configureStore();
-
-class Dashboard extends Component {
-  render = () => (
-    <Button colo="primary" raised>
-      {' '}
-      This is a test
-    </Button>
-  );
-}
 
 class App extends Component {
   constructor(props, context) {
@@ -37,10 +28,10 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <nav>
-            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/signin">Sign In</Link>
           </nav>
           <div>
-            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/signin" component={SignInContainer} />
           </div>
         </div>
       </BrowserRouter>
