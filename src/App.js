@@ -7,7 +7,7 @@ import { BrowserRouter, Link, Route } from 'react-router-dom';
 import withRoot from './sharedComponents/withRoot';
 import Config from './framework/config';
 import { configureStore } from './framework/redux';
-import { SignInContainer } from './app/auth/signIn';
+import { SignInContainer } from './app/auth';
 import './App.css';
 
 const store = configureStore();
