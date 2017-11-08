@@ -15,10 +15,10 @@ const SignIn = ({ classes, handleSubmit }) => (
       <form onSubmit={handleSubmit}>
         <Grid container className={classes.inputSection} alignItems="center" direction="column" justify="center">
           <Grid item>
-            <Field id="email" label="Email" name="email" component={TextField} type="email" />
+            <Field id="email" label="Email" name="email" component={TextField} type="email" required />
           </Grid>
           <Grid item>
-            <Field id="password" label="Password" name="password" component={TextField} type="password" />
+            <Field id="password" label="Password" name="password" component={TextField} type="password" required />
           </Grid>
         </Grid>
         <Grid container className={classes.actionSection} alignItems="center" direction="row" justify="center">
