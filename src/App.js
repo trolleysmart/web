@@ -16,7 +16,7 @@ class App extends Component {
   constructor(props, context) {
     super(props, context);
 
-    configParseServerSdk(Config.PARSE_SERVER_URL, Config.PARSE_SERVER_APPLICATION_ID, Config.PARSE_SERVER_JAVASCRIPT_KEY);
+    configParseServerSdk(Config.parseServerUrl, Config.parseServerApplicationId, Config.parseServerJavascriptKey);
 
     this.state = {
       store,
