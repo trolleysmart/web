@@ -9,7 +9,7 @@ import SignUp from './SignUp';
 
 class SignUpContainer extends Component {
   handleSignUpWithUsernameAndPassword = values => {
-    this.props.userAccessActions.signUpWithUsernameAndPassword(values.email, values.password, values.email);
+    this.props.userAccessActions.signUpWithUsernameAndPassword(values.email, values.password, values.email, 'store');
   };
 
   handleCancel = () => {};
