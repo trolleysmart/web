@@ -1,28 +1,22 @@
 // @flow
 
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ListItem, ListItemIcon } from 'material-ui/List';
+import { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import SignOutIcon from 'material-ui-icons/PowerSettingsNew';
 
 export const notSignedInStoreMainDrawerListItems = (
   <div>
-    <ListItem button>
-      <ListItemIcon>
-        <SignOutIcon />
-      </ListItemIcon>
-      <Link to="/signin">Sign In</Link>
-    </ListItem>
+    <ListItem button />
   </div>
 );
 
-export const signedInStoreMainDrawerListItems = (
+export const signedInStoreMainDrawerListItems = handleSignOut => (
   <div>
-    <ListItem button>
+    <ListItem button onClick={handleSignOut}>
       <ListItemIcon>
         <SignOutIcon />
       </ListItemIcon>
-      <Link to="/signout">Sign Out</Link>
+      <ListItemText primary="Sign Out" />
     </ListItem>
   </div>
 );
