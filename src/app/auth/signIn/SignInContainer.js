@@ -1,23 +1,41 @@
 // @flow
 
 import * as userAccessActions from 'micro-business-parse-server-common-web/dist/userAccess/Actions';
+import { UserAccessStatus } from 'micro-business-parse-server-common-web';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { LinearProgress } from 'material-ui/Progress';
 import SignIn from './SignIn';
 
 class SignInContainer extends Component {
+  componentWillReceiveProps = nextProps => {
+    if (nextProps.signInStatus === UserAccessStatus.SUCCEEDED) {
+      this.props.history.push('/');
+    }
+  };
+
   handleSignInWithUsernameAndPassword = values => {
     this.props.userAccessActions.signInWithUsernameAndPassword(values.email, values.password);
   };
 
   handleCancel = () => {};
 
-  render = () => <SignIn onSubmit={this.handleSignInWithUsernameAndPassword} handleCancel={this.handleCancel} />;
+  render = () => (
+    <div>
+      {this.props.signInStatus === UserAccessStatus.IN_PROGRESS && <LinearProgress />}
+
+      <SignIn onSubmit={this.handleSignInWithUsernameAndPassword} handleCancel={this.handleCancel} />
+    </div>
+  );
 }
 
 SignInContainer.propTypes = {
+  match: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired,
   userAccessActions: PropTypes.object.isRequired,
   signInStatus: PropTypes.number.isRequired,
 };
@@ -34,4 +52,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignInContainer);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SignInContainer));
