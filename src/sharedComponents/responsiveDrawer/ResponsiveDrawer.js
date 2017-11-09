@@ -12,7 +12,6 @@ import IconButton from 'material-ui/IconButton';
 import Hidden from 'material-ui/Hidden';
 import Divider from 'material-ui/Divider';
 import MenuIcon from 'material-ui-icons/Menu';
-import Button from 'material-ui/Button';
 import Styles from './Styles';
 
 const getDrawer = (classes, drawerListItems) => (
@@ -23,7 +22,7 @@ const getDrawer = (classes, drawerListItems) => (
   </div>
 );
 
-const ResponsiveDrawer = ({ classes, theme, mobileOpen, handleDrawerToggle, drawerListItems, appBarTitle }) => (
+const ResponsiveDrawer = ({ classes, theme, mobileOpen, handleDrawerToggle, drawerListItems, appBarTitle, children }) => (
   <div className={classes.root}>
     <div className={classes.appFrame}>
       <AppBar className={classes.appBar}>
@@ -63,7 +62,7 @@ const ResponsiveDrawer = ({ classes, theme, mobileOpen, handleDrawerToggle, draw
           {getDrawer(classes, drawerListItems)}
         </Drawer>
       </Hidden>
-      <main className={classes.content} />
+      <main className={classes.content}>{children}</main>
     </div>
   </div>
 );

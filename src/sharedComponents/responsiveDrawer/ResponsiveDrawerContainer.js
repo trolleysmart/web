@@ -19,7 +19,9 @@ class ResponsiveDrawerContainer extends Component {
       handleDrawerToggle={this.handleDrawerToggle}
       drawerListItems={this.props.drawerListItems}
       appBarTitle={this.props.appBarTitle}
-    />
+    >
+      {this.props.children}
+    </ResponsiveDrawer>
   );
 }
 
