@@ -12,6 +12,7 @@ import { withStyles } from 'material-ui/styles';
 import withRoot from './sharedComponents/withRoot';
 import { HomeContainer } from './app/home';
 import { SignInContainer } from './app/auth';
+import PrivateRoute from './sharedComponents/privateRoute';
 import Styles from './Styles';
 import './App.css';
 
@@ -28,7 +29,7 @@ class App extends Component {
     ) : (
       <BrowserRouter>
         <div>
-          <Route exact path="/" component={HomeContainer} />
+          <PrivateRoute exact path="/" component={HomeContainer} />
           <Route path="/signin" component={SignInContainer} />
         </div>
       </BrowserRouter>
