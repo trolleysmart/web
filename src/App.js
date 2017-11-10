@@ -29,7 +29,7 @@ class App extends Component {
     ) : (
       <BrowserRouter>
         <div>
-          <PrivateRoute exact path="/" component={HomeContainer} />
+          <PrivateRoute path="/" component={HomeContainer} exact />
           <Route path="/signin" component={SignInContainer} />
         </div>
       </BrowserRouter>
