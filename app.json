@@ -1,0 +1,6 @@
+{
+  "name": "Trolley Smart Web",
+  "description": "Trolley Smart Web",
+  "repository": "git+ssh://git@bitbucket.org/microbusiness/trolley-smart-web.git",
+  "image": "heroku/nodejs"
+}
