@@ -13,6 +13,8 @@ import SignIn from './SignIn';
 class SignInContainer extends Component {
   componentWillReceiveProps = nextProps => {
     if (nextProps.signInStatus === UserAccessStatus.SUCCEEDED) {
+      this.props.userAccessActions.resetSignInStatus();
+
       if (this.props.history.location.state && this.props.history.location.state.from) {
         this.props.history.goBack();
       } else {

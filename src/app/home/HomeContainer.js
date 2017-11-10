@@ -14,7 +14,8 @@ import { notSignedInStoreMainDrawerListItems, signedInStoreMainDrawerListItems }
 class HomeContainer extends Component {
   componentWillReceiveProps = nextProps => {
     if (nextProps.signOutStatus === UserAccessStatus.SUCCEEDED) {
-      this.props.history.push('/signin');
+      this.props.userAccessActions.resetSignOutStatus();
+      this.props.history.push('/');
     }
   };
 

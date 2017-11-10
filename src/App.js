@@ -11,8 +11,7 @@ import { LinearProgress } from 'material-ui/Progress';
 import { withStyles } from 'material-ui/styles';
 import withRoot from './sharedComponents/withRoot';
 import { HomeContainer } from './app/home';
-import { SignInContainer } from './app/auth';
-import PrivateRoute from './sharedComponents/privateRoute';
+import { SignInContainer, SignUpContainer } from './app/auth';
 import Styles from './Styles';
 import './App.css';
 
@@ -29,8 +28,9 @@ class App extends Component {
     ) : (
       <BrowserRouter>
         <div>
-          <PrivateRoute location="/" component={HomeContainer} exact />
-          <Route path="/signin" component={SignInContainer} />
+          <Route path="/" component={HomeContainer} exact />
+          <Route path="/signin" component={SignInContainer} exact />
+          <Route path="/signup" component={SignUpContainer} exact />
         </div>
       </BrowserRouter>
     );
