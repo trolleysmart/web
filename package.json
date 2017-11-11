@@ -9,7 +9,6 @@
   },
   "private": true,
   "dependencies": {
-    "express": "^4.16.2",
     "material-ui": "^1.0.0-beta.19",
     "material-ui-icons": "^1.0.0-beta.17",
     "micro-business-common-react": "^1.0.0-alpha.2",
