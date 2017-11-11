@@ -27,7 +27,7 @@ const SignUp = ({ classes, handleSubmit }) => (
         <Grid container className={classes.actionSection} alignItems="center" direction="row" justify="center">
           <Grid item>
             <Button color="primary" raised type="submit">
-              Sign In
+              Sign Up
             </Button>
           </Grid>
           <Grid item>
