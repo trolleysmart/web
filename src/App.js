@@ -77,7 +77,6 @@ class App extends Component {
           <Route path="/signin" component={SignInContainer} exact />
           <Route path="/signup" component={SignUpContainer} exact />
           <Snackbar
-            classes={classes.snackbar}
             open={snackbar.open}
             onRequestClose={this.handleRequestCloseSnackbar}
             transition={Fade}
