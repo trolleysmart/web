@@ -7,9 +7,6 @@ const styles = theme => ({
   progressRoot: {
     width: '100%',
   },
-  snackbar: {
-    margin: theme.spacing.unit,
-  },
 });
 
 export default styles;
