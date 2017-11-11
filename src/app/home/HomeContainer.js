@@ -25,11 +25,12 @@ class HomeContainer extends Component {
 
   render = () => (
     <div>
-      {this.props.signOutStatus === UserAccessStatus.IN_PROGRESS && <LinearProgress />}
       <ResponsiveDrawerContainer
         drawerListItems={this.props.userExists ? signedInStoreMainDrawerListItems(this.handleSignOut) : notSignedInStoreMainDrawerListItems}
         appBarTitle="Trolley Smart"
-      />
+      >
+        {this.props.signOutStatus === UserAccessStatus.IN_PROGRESS && <LinearProgress />}
+      </ResponsiveDrawerContainer>
     </div>
   );
 }
