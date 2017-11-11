@@ -98,8 +98,8 @@
   },
   "pre-commit": "lint:staged",
   "repository": {
-    "url": "git@bitbucket.org:microbusiness/trolley-smart-web.git",
-    "type": "git"
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org:microbusiness/trolley-smart-web.git"
   },
   "jest": {
     "collectCoverageFrom": [
