@@ -11,8 +11,8 @@
   "dependencies": {
     "material-ui": "^1.0.0-beta.19",
     "material-ui-icons": "^1.0.0-beta.17",
-    "micro-business-common-react": "^1.0.0-alpha.2",
-    "micro-business-parse-server-common-web": "^1.0.0-alpha.4",
+    "micro-business-common-react": "^1.0.0-alpha.3",
+    "micro-business-parse-server-common-web": "^1.0.0-alpha.5",
     "parse": "^1.10.2",
     "prop-types": "^15.6.0",
     "react": "^16.1.0",
@@ -20,6 +20,7 @@
     "react-jss": "^7.2.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
+    "react-toastify": "^2.2.0",
     "redux": "^3.7.2",
     "redux-form": "^7.1.2",
     "redux-form-material-ui": "^5.0.0-beta.1",
