@@ -63,24 +63,28 @@ class App extends Component {
   };
 
   render = () => {
-    return this.props.getCurrentUserStatus === UserAccessStatus.IN_PROGRESS ? (
-      <div className={this.props.classes.progressRoot}>
+    const { classes, getCurrentUserStatus } = this.props;
+    const { snackbar } = this.state;
+
+    return getCurrentUserStatus === UserAccessStatus.IN_PROGRESS ? (
+      <div className={classes.progressRoot}>
         <LinearProgress />
       </div>
     ) : (
       <BrowserRouter>
-        <div>
+        <div className={classes.root}>
           <Route path="/" component={HomeContainer} exact />
           <Route path="/signin" component={SignInContainer} exact />
           <Route path="/signup" component={SignUpContainer} exact />
           <Snackbar
-            open={this.state.snackbar.open}
+            classes={classes.snackbar}
+            open={snackbar.open}
             onRequestClose={this.handleRequestCloseSnackbar}
             transition={Fade}
             SnackbarContentProps={{
               'aria-describedby': 'message-id',
             }}
-            message={<span id="message-id">{this.state.snackbar.errorMessageToDisplay}</span>}
+            message={<span id="message-id">{snackbar.errorMessageToDisplay}</span>}
           />
         </div>
       </BrowserRouter>
@@ -89,6 +93,7 @@ class App extends Component {
 }
 
 App.propTypes = {
+  classes: PropTypes.object.isRequired,
   getCurrentUserStatus: PropTypes.number.isRequired,
   messageBarActions: PropTypes.object.isRequired,
   userAccessActions: PropTypes.object.isRequired,

@@ -42,6 +42,7 @@ const SignUp = ({ classes, handleSubmit }) => (
 );
 
 SignUp.propTypes = {
+  classes: PropTypes.object.isRequired,
   handleSubmit: PropTypes.func.isRequired,
   handleCancel: PropTypes.func.isRequired,
 };
