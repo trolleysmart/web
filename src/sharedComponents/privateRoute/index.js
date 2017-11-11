@@ -6,12 +6,12 @@ import { Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-const PrivateRoute = ({ component, userExists, getCurrentUserStatus, ...props }) => {
+const PrivateRoute = ({ userExists, getCurrentUserStatus, ...props }) => {
   if (getCurrentUserStatus === UserAccessStatus.IN_PROGRESS) {
     return <div />;
   }
 
-  return userExists ? <Route {...props} component={component} /> : <Redirect to={{ pathname: '/signin', state: { from: props.location } }} />;
+  return userExists ? <Route {...props} /> : <Redirect to={{ pathname: '/signin', state: { from: props.location } }} />;
 };
 
 PrivateRoute.propTypes = {

@@ -18,8 +18,8 @@ const MyProducts = ({ classes }) => (
         </TableRow>
       </TableHead>
       <TableBody>
-        <MyProduct key={1} name="Name 1" size="Size 1" />
-        <MyProduct key={2} name="Name 2" size="Size 2" />
+        <MyProduct productkey="1" name="Name 1" size="Size 1" />
+        <MyProduct productkey="2" name="Name 2" size="Size 2" />
       </TableBody>
     </Table>
   </Paper>

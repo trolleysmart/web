@@ -18,8 +18,8 @@ const MyStores = ({ classes }) => (
         </TableRow>
       </TableHead>
       <TableBody>
-        <MyStore key="1" name="Name 1" address="Address 1" />
-        <MyStore key="2" name="Name 2" address="Address 2" />
+        <MyStore storeKey="1" name="Name 1" address="Address 1" />
+        <MyStore storeKey="2" name="Name 2" address="Address 2" />
       </TableBody>
     </Table>
   </Paper>
