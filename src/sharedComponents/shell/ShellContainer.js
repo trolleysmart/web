@@ -45,8 +45,7 @@ ShellContainer.propTypes = {
   signOutStatus: PropTypes.number.isRequired,
 };
 
-function mapStateToProps(state, props) {
-  console.log(props);
+function mapStateToProps(state) {
   return {
     signOutStatus: state.userAccess.get('signOutStatus'),
     userExists: state.userAccess.get('userExists'),
