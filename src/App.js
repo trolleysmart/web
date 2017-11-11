@@ -15,8 +15,10 @@ import { LinearProgress } from 'material-ui/Progress';
 import Fade from 'material-ui/transitions/Fade';
 import { withStyles } from 'material-ui/styles';
 import withRoot from './sharedComponents/withRoot';
-import { HomeContainer } from './app/home';
+import { ShellContainer } from './sharedComponents/shell';
 import { SignInContainer, SignUpContainer } from './app/auth';
+import { HomeContainer } from './app/home';
+import { MyStoresContainer } from './app/myStores';
 import Styles from './Styles';
 import './App.css';
 
@@ -73,9 +75,10 @@ class App extends Component {
     ) : (
       <BrowserRouter>
         <div className={classes.root}>
-          <Route path="/" component={HomeContainer} exact />
           <Route path="/signin" component={SignInContainer} exact />
           <Route path="/signup" component={SignUpContainer} exact />
+          <Route path="/" exact render={props => <ShellContainer {...props} shellContent={<HomeContainer />} />} />
+          <Route path="/mystores" exact render={props => <ShellContainer {...props} shellContent={<MyStoresContainer />} />} />
           <Snackbar
             open={snackbar.open}
             onRequestClose={this.handleRequestCloseSnackbar}

@@ -3,6 +3,9 @@
 import React from 'react';
 import { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import SignOutIcon from 'material-ui-icons/PowerSettingsNew';
+import HomeIcon from 'material-ui-icons/Home';
+import MyStoresIcon from 'material-ui-icons/Store';
+import MyProductsIcon from 'material-ui-icons/Storage';
 import { Link } from 'react-router-dom';
 
 export const notSignedInStoreMainDrawerListItems = (
@@ -24,6 +27,24 @@ export const notSignedInStoreMainDrawerListItems = (
 
 export const signedInStoreMainDrawerListItems = handleSignOut => (
   <div>
+    <ListItem button>
+      <ListItemIcon>
+        <HomeIcon />
+      </ListItemIcon>
+      <Link to="/">Home</Link>
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <MyStoresIcon />
+      </ListItemIcon>
+      <Link to="/mystores">My Stores</Link>
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <MyProductsIcon />
+      </ListItemIcon>
+      <Link to="/myproducts">My Products</Link>
+    </ListItem>
     <ListItem button onClick={handleSignOut}>
       <ListItemIcon>
         <SignOutIcon />
