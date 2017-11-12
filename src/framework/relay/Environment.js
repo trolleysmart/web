@@ -18,7 +18,6 @@ const fetchQuery = async (operation, variables) => {
       query: operation.text,
       variables,
     }),
-    mode: 'no-cors',
   });
 
   const result = await response.json();
