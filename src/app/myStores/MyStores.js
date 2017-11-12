@@ -1,32 +1,41 @@
 // @flow
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
-import Paper from 'material-ui/Paper';
-import MyStore from './MyStore';
-import Styles from './Styles';
+import React, { Component } from 'react';
+import { environment } from '../../framework/relay';
+import { graphql, QueryRenderer } from 'react-relay';
+import MyStoresRelayContainer from './MyStoresRelayContainer';
 
-const MyStores = ({ classes }) => (
-  <Paper className={classes.root}>
-    <Table className={classes.table}>
-      <TableHead>
-        <TableRow>
-          <TableCell>Name</TableCell>
-          <TableCell>Address</TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        <MyStore storeKey="1" name="Name 1" address="Address 1" />
-        <MyStore storeKey="2" name="Name 2" address="Address 2" />
-      </TableBody>
-    </Table>
-  </Paper>
-);
+class MyStores extends Component {
+  render() {
+    return (
+      <QueryRenderer
+        environment={environment}
+        query={graphql`
+          query MyStoresQuery($count: Int!, $cursor: String) {
+            user {
+              ...MyStoresRelayContainer_user
+            }
+          }
+        `}
+        variables={{
+          cursor: null,
+          count: 30,
+        }}
+        render={({ error, props, retry }) => {
+          if (error) {
+            console.log(error);
+            return <div />;
+          }
 
-MyStores.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+          if (props) {
+            return <MyStoresRelayContainer user={props.user} />;
+          }
 
-export default withStyles(Styles)(MyStores);
+          return <div />;
+        }}
+      />
+    );
+  }
+}
+
+export default MyStores;

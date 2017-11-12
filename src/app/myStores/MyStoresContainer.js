@@ -2,10 +2,10 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import MyStores from './MyStores';
+import MyStoresList from './MyStoresList';
 
 class MyStoresContainer extends Component {
-  render = () => <MyStores />;
+  render = () => <MyStoresList />;
 }
 
 MyStoresContainer.propTypes = {};
