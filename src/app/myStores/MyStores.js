@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { environment } from '../../framework/relay';
 import { graphql, QueryRenderer } from 'react-relay';
 import MyStoresRelayContainer from './MyStoresRelayContainer';
+import Loading from '../../sharedComponents/loading';
 
 class MyStores extends Component {
   render() {
@@ -31,7 +32,7 @@ class MyStores extends Component {
             return <MyStoresRelayContainer user={props.user} />;
           }
 
-          return <div />;
+          return <Loading />;
         }}
       />
     );

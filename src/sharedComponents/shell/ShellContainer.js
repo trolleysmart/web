@@ -7,9 +7,9 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { LinearProgress } from 'material-ui/Progress';
 import { ResponsiveDrawerContainer } from '../responsiveDrawer';
 import { notSignedInStoreMainDrawerListItems, signedInStoreMainDrawerListItems } from '../../app/navigation';
+import Loading from '../loading';
 
 class ShellContainer extends Component {
   componentWillReceiveProps = nextProps => {
@@ -29,7 +29,7 @@ class ShellContainer extends Component {
         drawerListItems={this.props.userExists ? signedInStoreMainDrawerListItems(this.handleSignOut) : notSignedInStoreMainDrawerListItems}
         appBarTitle="Trolley Smart"
       >
-        {this.props.signOutStatus === UserAccessStatus.IN_PROGRESS && <LinearProgress />}
+        {this.props.signOutStatus === UserAccessStatus.IN_PROGRESS && <Loading />}
         {this.props.shellContent}
       </ResponsiveDrawerContainer>
     </div>

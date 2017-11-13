@@ -9,6 +9,9 @@
   },
   "private": true,
   "dependencies": {
+    "@devexpress/dx-react-core": "^1.0.0-beta.1",
+    "@devexpress/dx-react-grid": "^1.0.0-beta.1",
+    "@devexpress/dx-react-grid-material-ui": "^1.0.0-beta.1",
     "immutable": "^4.0.0-rc.9",
     "material-ui": "^1.0.0-beta.19",
     "material-ui-icons": "^1.0.0-beta.17",
@@ -146,9 +149,12 @@
       "stage-0"
     ],
     "plugins": [
-      ["relay", {
-        "schema": "data/schema.json"
-      }]
+      [
+        "relay",
+        {
+          "schema": "data/schema.json"
+        }
+      ]
     ]
   },
   "eslintConfig": {
@@ -162,7 +168,8 @@
         0
       ],
       "import/no-unresolved": [
-        2, {
+        2,
+        {
           "commonjs": true
         }
       ],
@@ -180,7 +187,8 @@
         2
       ],
       "react/jsx-filename-extension": [
-        1, {
+        1,
+        {
           "extensions": [
             ".js",
             ".jsx"
@@ -195,7 +203,8 @@
       "no-console": 0,
       "jsx-a11y/href-no-hash": "off",
       "jsx-a11y/anchor-is-valid": [
-        "warn", {
+        "warn",
+        {
           "aspects": [
             "invalidHref"
           ]

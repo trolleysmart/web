@@ -21,10 +21,6 @@ export default createPaginationContainer(
               name
               imageUrl
               address
-              phones {
-                label
-                number
-              }
               openingHours {
                 from
                 until
