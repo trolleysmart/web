@@ -3,12 +3,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import { Grid, TableView, TableHeaderRow } from '@devexpress/dx-react-grid-material-ui';
+import { PagingState, SortingState } from '@devexpress/dx-react-grid';
+import { Grid, TableView, TableHeaderRow, PagingPanel } from '@devexpress/dx-react-grid-material-ui';
+import { TableCell } from 'material-ui';
 import Paper from 'material-ui/Paper';
 import Styles from './Styles';
 import { StoresProp } from './PropTypes';
 
-const MyStoresList = ({ classes, stores }) => (
+const MyStoresList = ({ classes, stores, sortingState, handleSortingChanged }) => (
   <Paper className={classes.root}>
     <Grid
       columns={[
@@ -19,8 +21,9 @@ const MyStoresList = ({ classes, stores }) => (
       ]}
       rows={stores}
     >
+      <SortingState sorting={sortingState} onSortingChange={handleSortingChanged} />
       <TableView />
-      <TableHeaderRow />
+      <TableHeaderRow allowSorting />
     </Grid>
   </Paper>
 );
@@ -28,6 +31,13 @@ const MyStoresList = ({ classes, stores }) => (
 MyStoresList.propTypes = {
   classes: PropTypes.object.isRequired,
   stores: StoresProp,
+  sortingState: PropTypes.arrayOf(
+    PropTypes.shape({
+      columnName: PropTypes.string.isRequired,
+      direction: PropTypes.string.isRequired,
+    }),
+  ),
+  handleSortingChanged: PropTypes.func.isRequired,
 };
 
 export default withStyles(Styles)(MyStoresList);
