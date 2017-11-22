@@ -7,7 +7,7 @@ import MyStoresRelayContainer from './MyStoresRelayContainer';
 import Loading from '../../sharedComponents/loading';
 
 class MyStores extends Component {
-  render() {
+  render = () => {
     return (
       <QueryRenderer
         environment={environment}
@@ -36,7 +36,7 @@ class MyStores extends Component {
         }}
       />
     );
-  }
+  };
 }
 
 export default MyStores;

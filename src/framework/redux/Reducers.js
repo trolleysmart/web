@@ -4,6 +4,7 @@ import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import { UserAccessReducer } from 'micro-business-parse-server-common-web';
 import { AppUpdaterReducer, MessageBarReducer } from 'micro-business-common-react';
+import { LocalStateReducer } from '../localState';
 
 export default function getReducers() {
   return combineReducers({
@@ -11,5 +12,6 @@ export default function getReducers() {
     userAccess: UserAccessReducer,
     appUpdater: AppUpdaterReducer,
     messageBar: MessageBarReducer,
+    localState: LocalStateReducer,
   });
 }
