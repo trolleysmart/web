@@ -9,6 +9,9 @@ const styles = theme => ({
   table: {
     minWidth: 700,
   },
+  fabButton: {
+    margin: theme.spacing.unit,
+  },
 });
 
 export default styles;

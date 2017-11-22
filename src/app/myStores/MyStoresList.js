@@ -6,6 +6,8 @@ import { withStyles } from 'material-ui/styles';
 import { PagingState, SortingState } from '@devexpress/dx-react-grid';
 import { Grid, TableView, TableHeaderRow, PagingPanel } from '@devexpress/dx-react-grid-material-ui';
 import { TableCell } from 'material-ui';
+import Button from 'material-ui/Button';
+import AddIcon from 'material-ui-icons/Add';
 import Paper from 'material-ui/Paper';
 import Styles from './Styles';
 import { StoresProp } from './PropTypes';
@@ -25,6 +27,9 @@ const MyStoresList = ({ classes, stores, sortingState, handleSortingChanged }) =
       <TableView />
       <TableHeaderRow allowSorting />
     </Grid>
+    <Button fab color="primary" aria-label="add" className={classes.button}>
+      <AddIcon />
+    </Button>
   </Paper>
 );
 
