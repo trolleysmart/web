@@ -26,10 +26,10 @@ const MyStoresList = ({ classes, stores, sortingState, handleSortingChanged }) =
       <SortingState sorting={sortingState} onSortingChange={handleSortingChanged} />
       <TableView />
       <TableHeaderRow allowSorting />
+      <Button fab color="primary" aria-label="add" className={classes.button}>
+        <AddIcon />
+      </Button>
     </Grid>
-    <Button fab color="primary" aria-label="add" className={classes.button}>
-      <AddIcon />
-    </Button>
   </Paper>
 );
 
