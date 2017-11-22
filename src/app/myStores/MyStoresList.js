@@ -13,24 +13,26 @@ import Styles from './Styles';
 import { StoresProp } from './PropTypes';
 
 const MyStoresList = ({ classes, stores, sortingState, handleSortingChanged }) => (
-  <Paper className={classes.root}>
-    <Grid
-      columns={[
-        { name: 'name', title: 'Name' },
-        { name: 'address', title: 'Address' },
-        { name: 'openFrom', title: 'Open From' },
-        { name: 'openUntil', title: 'Open Until' },
-      ]}
-      rows={stores}
-    >
-      <SortingState sorting={sortingState} onSortingChange={handleSortingChanged} />
-      <TableView />
-      <TableHeaderRow allowSorting />
-      <Button fab color="primary" aria-label="add" className={classes.button}>
-        <AddIcon />
-      </Button>
-    </Grid>
-  </Paper>
+  <div>
+    <Paper className={classes.root}>
+      <Grid
+        columns={[
+          { name: 'name', title: 'Name' },
+          { name: 'address', title: 'Address' },
+          { name: 'openFrom', title: 'Open From' },
+          { name: 'openUntil', title: 'Open Until' },
+        ]}
+        rows={stores}
+      >
+        <SortingState sorting={sortingState} onSortingChange={handleSortingChanged} />
+        <TableView />
+        <TableHeaderRow allowSorting />
+      </Grid>
+    </Paper>
+    <Button fab color="primary" aria-label="add" className={classes.button}>
+      <AddIcon />
+    </Button>
+  </div>
 );
 
 MyStoresList.propTypes = {
