@@ -29,7 +29,7 @@ const MyStoresList = ({ classes, stores, sortingState, handleSortingChanged }) =
         <TableHeaderRow allowSorting />
       </Grid>
     </Paper>
-    <Button fab color="primary" aria-label="add" className={classes.button}>
+    <Button fab color="primary" aria-label="add" className={classes.fabButton}>
       <AddIcon />
     </Button>
   </div>

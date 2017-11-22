@@ -11,6 +11,9 @@ const styles = theme => ({
   },
   fabButton: {
     margin: theme.spacing.unit,
+    right: 20,
+    bottom: 20,
+    position: 'fixed',
   },
 });
 
