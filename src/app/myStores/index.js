@@ -1,3 +1,3 @@
 // @flow
 
-export MyStores from './MyStores';
+export { MyStores } from './stores';

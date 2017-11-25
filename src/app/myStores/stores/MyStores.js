@@ -1,10 +1,10 @@
 // @flow
 
 import React from 'react';
-import { environment } from '../../framework/relay';
+import { environment } from '../../../framework/relay';
 import { graphql, QueryRenderer } from 'react-relay';
+import Loading from '../../../sharedComponents/loading';
 import MyStoresRelayContainer from './MyStoresRelayContainer';
-import Loading from '../../sharedComponents/loading';
 
 const MyStores = () => (
   <QueryRenderer
