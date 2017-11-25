@@ -2,18 +2,18 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import MyStoresList from './MyStoresList';
-import { type MyStoresRelayContainer_user } from './__generated__/MyStoresRelayContainer_user.graphql';
+import StoresList from './StoresList';
+import { type StoresRelayContainer_user } from './__generated__/StoresRelayContainer_user.graphql';
 
 type Props = {
-  user: MyStoresRelayContainer_user,
+  user: StoresRelayContainer_user,
 };
 
 type State = {
   isFetchingTop: boolean,
 };
 
-class MyStoresContainer extends Component<any, Props, State> {
+class StoresContainer extends Component<any, Props, State> {
   state = {
     sortingState: [{ columnName: 'name', direction: 'desc' }],
   };
@@ -23,7 +23,7 @@ class MyStoresContainer extends Component<any, Props, State> {
   };
 
   render = () => (
-    <MyStoresList
+    <StoresList
       stores={this.props.user.ownedStores.edges
         .map(_ => _.node)
         .map(_ => ({
@@ -80,7 +80,7 @@ class MyStoresContainer extends Component<any, Props, State> {
   );
 }
 
-MyStoresContainer.propTypes = {};
+StoresContainer.propTypes = {};
 
 function mapStateToProps(state) {
   return {};
@@ -90,4 +90,4 @@ function mapDispatchToProps(dispatch) {
   return {};
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MyStoresContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(StoresContainer);

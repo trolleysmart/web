@@ -2,18 +2,18 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import MyProductsList from './MyProductsList';
-import { type MyProductsRelayContainer_user } from './__generated__/MyProductsRelayContainer_user.graphql';
+import ProductsList from './ProductsList';
+import { type ProductsRelayContainer_user } from './__generated__/ProductsRelayContainer_user.graphql';
 
 type Props = {
-  user: MyProductsRelayContainer_user,
+  user: ProductsRelayContainer_user,
 };
 
 type State = {
   isFetchingTop: boolean,
 };
 
-class MyProductsContainer extends Component<any, Props, State> {
+class ProductsContainer extends Component<any, Props, State> {
   state = {
     sortingState: [{ columnName: 'name', direction: 'desc' }],
   };
@@ -23,7 +23,7 @@ class MyProductsContainer extends Component<any, Props, State> {
   };
 
   render = () => (
-    <MyProductsList
+    <ProductsList
       myProducts={this.props.user.myProducts.edges.map(_ => _.node).sort((myProduct1, myProduct2) => {
         const columnSorting = this.state.sortingState[0];
 
@@ -61,7 +61,7 @@ class MyProductsContainer extends Component<any, Props, State> {
   );
 }
 
-MyProductsContainer.propTypes = {};
+ProductsContainer.propTypes = {};
 
 function mapStateToProps(state) {
   return {};
@@ -71,4 +71,4 @@ function mapDispatchToProps(dispatch) {
   return {};
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MyProductsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ProductsContainer);

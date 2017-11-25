@@ -1,18 +1,18 @@
 // @flow
 
 import React from 'react';
-import { environment } from '../../framework/relay';
+import { environment } from '../../../framework/relay';
 import { graphql, QueryRenderer } from 'react-relay';
-import MyProductsRelayContainer from './MyProductsRelayContainer';
-import Loading from '../../sharedComponents/loading';
+import Loading from '../../../sharedComponents/loading';
+import StoresRelayContainer from './StoresRelayContainer';
 
-const MyProducts = () => (
+const Stores = () => (
   <QueryRenderer
     environment={environment}
     query={graphql`
-      query MyProductsQuery($count: Int!, $cursor: String) {
+      query StoresQuery($count: Int!, $cursor: String) {
         user {
-          ...MyProductsRelayContainer_user
+          ...StoresRelayContainer_user
         }
       }
     `}
@@ -27,7 +27,7 @@ const MyProducts = () => (
       }
 
       if (props) {
-        return <MyProductsRelayContainer user={props.user} />;
+        return <StoresRelayContainer user={props.user} />;
       }
 
       return <Loading />;
@@ -35,4 +35,4 @@ const MyProducts = () => (
   />
 );
 
-export default MyProducts;
+export default Stores;

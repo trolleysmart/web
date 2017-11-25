@@ -9,7 +9,7 @@ import { Field, reduxForm } from 'redux-form';
 import { TextField } from 'redux-form-material-ui';
 import Styles from './Styles';
 
-const SignIn = ({ classes, handleSubmit }) => (
+const SignIn = ({ classes, handleSubmit, handleCancel }) => (
   <Grid container className={classes.root}>
     <Grid item xs={12}>
       <form onSubmit={handleSubmit}>

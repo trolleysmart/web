@@ -1,13 +1,13 @@
 // @flow
 
 import { createPaginationContainer, graphql } from 'react-relay';
-import MyProductsContainer from './MyProductsContainer';
+import ProductsContainer from './ProductsContainer';
 
 export default createPaginationContainer(
-  MyProductsContainer,
+  ProductsContainer,
   {
     user: graphql`
-      fragment MyProductsRelayContainer_user on User {
+      fragment ProductsRelayContainer_user on User {
         id
         myProducts(first: $count, after: $cursor) @connection(key: "User_myProducts") {
           pageInfo {
@@ -46,9 +46,9 @@ export default createPaginationContainer(
       cursor: null,
     },
     query: graphql`
-      query MyProductsRelayContainerPaginationQuery($count: Int!, $cursor: String) {
+      query ProductsRelayContainerPaginationQuery($count: Int!, $cursor: String) {
         user {
-          ...MyProductsRelayContainer_user
+          ...ProductsRelayContainer_user
         }
       }
     `,

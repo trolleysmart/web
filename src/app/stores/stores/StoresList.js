@@ -12,7 +12,7 @@ import Paper from 'material-ui/Paper';
 import Styles from './Styles';
 import { StoresProp } from './PropTypes';
 
-const MyStoresList = ({ classes, stores, sortingState, handleSortingChanged }) => (
+const StoresList = ({ classes, stores, sortingState, handleSortingChanged }) => (
   <div>
     <Paper className={classes.root}>
       <Grid
@@ -35,7 +35,7 @@ const MyStoresList = ({ classes, stores, sortingState, handleSortingChanged }) =
   </div>
 );
 
-MyStoresList.propTypes = {
+StoresList.propTypes = {
   classes: PropTypes.object.isRequired,
   stores: StoresProp,
   sortingState: PropTypes.arrayOf(
@@ -47,4 +47,4 @@ MyStoresList.propTypes = {
   handleSortingChanged: PropTypes.func.isRequired,
 };
 
-export default withStyles(Styles)(MyStoresList);
+export default withStyles(Styles)(StoresList);

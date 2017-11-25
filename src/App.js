@@ -18,8 +18,8 @@ import withRoot from './sharedComponents/withRoot';
 import { ShellContainer } from './sharedComponents/shell';
 import { SignInContainer, SignUpContainer } from './app/auth';
 import { HomeContainer } from './app/home';
-import { MyStores } from './app/myStores';
-import { MyProducts } from './app/myProducts';
+import { Stores, NewStoreContainer } from './app/stores';
+import { Products } from './app/products';
 import Styles from './Styles';
 import './App.css';
 
@@ -79,8 +79,9 @@ class App extends Component {
           <Route path="/signin" component={SignInContainer} exact />
           <Route path="/signup" component={SignUpContainer} exact />
           <Route path="/" exact render={props => <ShellContainer {...props} shellContent={<HomeContainer />} />} />
-          <Route path="/mystores" exact render={props => <ShellContainer {...props} shellContent={<MyStores />} />} />
-          <Route path="/myproducts" exact render={props => <ShellContainer {...props} shellContent={<MyProducts />} />} />
+          <Route path="/mystores" exact render={props => <ShellContainer {...props} shellContent={<Stores />} />} />
+          <Route path="/myproducts" exact render={props => <ShellContainer {...props} shellContent={<Products />} />} />
+          <Route path="/newStore" exact render={props => <ShellContainer {...props} shellContent={<NewStoreContainer />} />} />
           <Snackbar
             open={snackbar.open}
             onRequestClose={this.handleRequestCloseSnackbar}

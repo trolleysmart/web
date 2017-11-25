@@ -10,9 +10,9 @@ import Button from 'material-ui/Button';
 import AddIcon from 'material-ui-icons/Add';
 import Paper from 'material-ui/Paper';
 import Styles from './Styles';
-import { MyProductsProp } from './PropTypes';
+import { ProductsProp } from './PropTypes';
 
-const MyProductsList = ({ classes, myProducts, sortingState, handleSortingChanged }) => (
+const ProductsList = ({ classes, myProducts, sortingState, handleSortingChanged }) => (
   <div>
     <Paper className={classes.root}>
       <Grid columns={[{ name: 'name', title: 'Name' }, { name: 'description', title: 'description' }]} rows={myProducts}>
@@ -27,9 +27,9 @@ const MyProductsList = ({ classes, myProducts, sortingState, handleSortingChange
   </div>
 );
 
-MyProductsList.propTypes = {
+ProductsList.propTypes = {
   classes: PropTypes.object.isRequired,
-  myProducts: MyProductsProp,
+  myProducts: ProductsProp,
   sortingState: PropTypes.arrayOf(
     PropTypes.shape({
       columnName: PropTypes.string.isRequired,
@@ -39,4 +39,4 @@ MyProductsList.propTypes = {
   handleSortingChanged: PropTypes.func.isRequired,
 };
 
-export default withStyles(Styles)(MyProductsList);
+export default withStyles(Styles)(ProductsList);
