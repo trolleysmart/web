@@ -27,7 +27,9 @@ class SignUpContainer extends Component {
     this.props.userAccessActions.signUpWithUsernameAndPassword(values.email, values.password, values.email, 'storeOwner');
   };
 
-  handleCancel = () => {};
+  handleCancel = () => {
+    this.props.history.goBack();
+  };
 
   render = () => (
     <div>

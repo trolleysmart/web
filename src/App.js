@@ -79,8 +79,8 @@ class App extends Component {
           <Route path="/signin" component={SignInContainer} exact />
           <Route path="/signup" component={SignUpContainer} exact />
           <Route path="/" exact render={props => <ShellContainer {...props} shellContent={<HomeContainer />} />} />
-          <Route path="/mystores" exact render={props => <ShellContainer {...props} shellContent={<Stores />} />} />
-          <Route path="/myproducts" exact render={props => <ShellContainer {...props} shellContent={<Products />} />} />
+          <Route path="/myStores" exact render={props => <ShellContainer {...props} shellContent={<Stores />} />} />
+          <Route path="/myProducts" exact render={props => <ShellContainer {...props} shellContent={<Products />} />} />
           <Route path="/newStore" exact render={props => <ShellContainer {...props} shellContent={<NewStoreContainer />} />} />
           <Snackbar
             open={snackbar.open}

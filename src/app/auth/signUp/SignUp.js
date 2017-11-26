@@ -9,7 +9,7 @@ import { Field, reduxForm } from 'redux-form';
 import { TextField } from 'redux-form-material-ui';
 import Styles from './Styles';
 
-const SignUp = ({ classes, handleSubmit }) => (
+const SignUp = ({ classes, handleSubmit, handleCancel }) => (
   <Grid container className={classes.root}>
     <Grid item xs={12}>
       <form onSubmit={handleSubmit}>
@@ -31,7 +31,7 @@ const SignUp = ({ classes, handleSubmit }) => (
             </Button>
           </Grid>
           <Grid item>
-            <Button color="default" raised>
+            <Button color="default" raised onClick={handleCancel}>
               Cancel
             </Button>
           </Grid>

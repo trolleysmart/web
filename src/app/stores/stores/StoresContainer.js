@@ -1,7 +1,9 @@
 // @flow
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import StoresList from './StoresList';
 import { type StoresRelayContainer_user } from './__generated__/StoresRelayContainer_user.graphql';
 
@@ -20,6 +22,10 @@ class StoresContainer extends Component<any, Props, State> {
 
   handleSortingChanged = sortingState => {
     this.setState({ sortingState });
+  };
+
+  handleAddButtonClicked = () => {
+    this.props.history.push('/newStore');
   };
 
   render = () => (
@@ -76,18 +82,19 @@ class StoresContainer extends Component<any, Props, State> {
         })}
       sortingState={this.state.sortingState}
       handleSortingChanged={this.handleSortingChanged}
+      handleAddButtonClicked={this.handleAddButtonClicked}
     />
   );
 }
 
-StoresContainer.propTypes = {};
+StoresContainer.propTypes = {
+  match: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired,
+};
 
 function mapStateToProps(state) {
   return {};
 }
 
-function mapDispatchToProps(dispatch) {
-  return {};
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(StoresContainer);
+export default withRouter(connect(mapStateToProps)(StoresContainer));

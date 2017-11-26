@@ -27,7 +27,9 @@ class SignInContainer extends Component {
     this.props.userAccessActions.signInWithUsernameAndPassword(values.email, values.password);
   };
 
-  handleCancel = () => {};
+  handleCancel = () => {
+    this.props.history.goBack();
+  };
 
   render = () => (
     <div>

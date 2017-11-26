@@ -14,12 +14,16 @@ const rootSagas = function* sagas() {
   yield [watchGetCurrentUser(), watchSignUpWithUsernameAndPassword(), watchSignInWithUsernameAndPassword(), watchSignOut()];
 };
 
-export default function configureStore(navigationReducer, initialState) {
+const configureStore = initialState => {
   const sagaMiddleware = createSagaMiddleware();
   const middleware = applyMiddleware(sagaMiddleware);
-  const store = createStore(getReducers(navigationReducer), initialState, middleware);
+  const store = createStore(getReducers(), initialState, middleware);
 
   sagaMiddleware.run(rootSagas);
 
   return store;
-}
+};
+
+const reduxStore = configureStore();
+
+export default reduxStore;

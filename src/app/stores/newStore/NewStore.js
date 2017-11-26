@@ -26,7 +26,7 @@ const NewStore = ({ classes, handleSubmit, handleCancel }) => (
         </Button>
       </Grid>
       <Grid item>
-        <Button color="default" raised>
+        <Button color="default" raised onClick={handleCancel}>
           Cancel
         </Button>
       </Grid>

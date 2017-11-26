@@ -12,7 +12,7 @@ import Paper from 'material-ui/Paper';
 import Styles from './Styles';
 import { StoresProp } from './PropTypes';
 
-const StoresList = ({ classes, stores, sortingState, handleSortingChanged }) => (
+const StoresList = ({ classes, stores, sortingState, handleSortingChanged, handleAddButtonClicked }) => (
   <div>
     <Paper className={classes.root}>
       <Grid
@@ -29,7 +29,7 @@ const StoresList = ({ classes, stores, sortingState, handleSortingChanged }) => 
         <TableHeaderRow allowSorting />
       </Grid>
     </Paper>
-    <Button fab color="primary" aria-label="add" className={classes.fabButton}>
+    <Button fab color="primary" aria-label="add" className={classes.fabButton} onClick={handleAddButtonClicked}>
       <AddIcon />
     </Button>
   </div>
@@ -45,6 +45,7 @@ StoresList.propTypes = {
     }),
   ),
   handleSortingChanged: PropTypes.func.isRequired,
+  handleAddButtonClicked: PropTypes.func.isRequired,
 };
 
 export default withStyles(Styles)(StoresList);

@@ -1,3 +1,3 @@
 // @flow
 
-export configureStore from './Store';
+export reduxStore from './Store';
