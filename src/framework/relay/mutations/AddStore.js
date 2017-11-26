@@ -4,7 +4,7 @@ import { commitMutation, graphql } from 'react-relay';
 import { ConnectionHandler } from 'relay-runtime';
 import uuid from 'uuid/v4';
 import { MessageType } from 'micro-business-common-react';
-import * as messageBarActions from 'micro-business-common-react/src/messageBar/Actions';
+import * as messageBarActions from 'micro-business-common-react/dist/messageBar/Actions';
 import { reduxStore } from '../../redux';
 
 const mutation = graphql`
@@ -53,7 +53,7 @@ const commit = (environment, userId, name, address) => {
       } else {
         const storeEdge = payload.getLinkedRecord('store');
 
-        sharedUpdater(store, userId, storeEdge);
+        /* sharedUpdater(store, userId, storeEdge);*/
       }
     },
     optimisticUpdater: store => {
@@ -68,7 +68,7 @@ const commit = (environment, userId, name, address) => {
       const storeEdge = store.create(uuid(), 'StoreEdge');
 
       storeEdge.setLinkedRecord(node, 'node');
-      sharedUpdater(store, userId, storeEdge);
+      /* sharedUpdater(store, userId, storeEdge);*/
     },
   });
 };
