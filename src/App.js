@@ -1,8 +1,8 @@
 // @flow
 
 import Immutable, { Map } from 'immutable';
-import * as userAccessActions from 'micro-business-parse-server-common-web/dist/userAccess/Actions';
-import { UserAccessStatus } from 'micro-business-parse-server-common-web';
+import * as userAccessActions from 'micro-business-common-react/dist/userAccess/Actions';
+import { UserAccessStatus } from 'micro-business-common-react';
 import { MessageType } from 'micro-business-common-react';
 import * as messageBarActions from 'micro-business-common-react/dist/messageBar/Actions';
 import React, { Component } from 'react';

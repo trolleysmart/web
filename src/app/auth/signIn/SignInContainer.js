@@ -1,7 +1,7 @@
 // @flow
 
-import * as userAccessActions from 'micro-business-parse-server-common-web/dist/userAccess/Actions';
-import { UserAccessStatus } from 'micro-business-parse-server-common-web';
+import * as userAccessActions from 'micro-business-common-react/dist/userAccess/Actions';
+import { UserAccessStatus } from 'micro-business-common-react';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';

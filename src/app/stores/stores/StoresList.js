@@ -25,7 +25,7 @@ const StoresList = ({ classes, stores, sortingState, handleSortingChanged, handl
         rows={stores}
       >
         <SortingState sorting={sortingState} onSortingChange={handleSortingChanged} />
-        <TableView />
+        {/* <TableView /> */}
         <TableHeaderRow allowSorting />
       </Grid>
     </Paper>

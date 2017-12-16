@@ -2,7 +2,7 @@
 
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-import { UserAccessReducer } from 'micro-business-parse-server-common-web';
+import { UserAccessReducer } from 'micro-business-common-react';
 import { AppUpdaterReducer, MessageBarReducer } from 'micro-business-common-react';
 import { LocalStateReducer } from '../localState';
 

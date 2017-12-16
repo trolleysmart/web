@@ -17,7 +17,7 @@ const ProductsList = ({ classes, myProducts, sortingState, handleSortingChanged 
     <Paper className={classes.root}>
       <Grid columns={[{ name: 'name', title: 'Name' }, { name: 'description', title: 'description' }]} rows={myProducts}>
         <SortingState sorting={sortingState} onSortingChange={handleSortingChanged} />
-        <TableView />
+        {/* <TableView /> */}
         <TableHeaderRow allowSorting />
       </Grid>
     </Paper>
