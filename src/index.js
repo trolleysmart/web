@@ -4,7 +4,7 @@ import 'regenerator-runtime/runtime';
 import 'typeface-roboto';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { configParseServerSdk } from 'micro-business-parse-server-common-web';
+import { configParseServerSdk } from '@microbusiness/parse-server-common-web';
 import { reduxStore } from './framework/redux';
 import Config from './framework/config';
 import { Provider } from 'react-redux';
