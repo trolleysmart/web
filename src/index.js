@@ -2,9 +2,9 @@
 
 import 'regenerator-runtime/runtime';
 import 'typeface-roboto';
+import { configParseServerSdk } from '@microbusiness/parse-server-common-web';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { configParseServerSdk } from '@microbusiness/parse-server-common-web';
 import { reduxStore } from './framework/redux';
 import Config from './framework/config';
 import { Provider } from 'react-redux';
